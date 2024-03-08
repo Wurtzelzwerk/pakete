@@ -1,11 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Frontend extends JFrame {
-    Color myPrimaryColor;
-    Color mySecondaryColor;
+    Color myPrimaryColor = new Color(0,0,255);
+    Color mySecondaryColor = new Color(236, 15, 184);
+
+    public ArrayList<Button> buttons = new ArrayList<Button>();
+
+    private Panel buttonPanel;
+
     Frontend(){
-        Color blue = new Color(0,0,255);
         this.setTitle("Paketstation");
         this.setSize(640,480);
         // Set border layout
@@ -13,14 +19,16 @@ public class Frontend extends JFrame {
         // create a new panel with border layout
         Panel panel = new Panel(new BorderLayout());
         TextField topTextField = new TextField("Textfield");
-        topTextField.setBackground(blue);
+
+        topTextField.setBackground(this.myPrimaryColor);
         panel.add(new TextField("Textfield"), BorderLayout.CENTER);
         // create abutton grid layout 1x4
-        Panel buttonPanel = new Panel(new GridLayout(4,1));
-        buttonPanel.add(new Button("Einfüen"));
-        buttonPanel.add(new Button("Entnehmen"));
-        buttonPanel.add(new Button("Auflisten"));
-        buttonPanel.add(new Button("Ende"));
+
+        buttonPanel = new Panel(new GridLayout(4,1));
+        createButtonPanel("Einfügen");
+        createButtonPanel("Entnehmen");
+        createButtonPanel("Auflisten");
+        createButtonPanel("Ende");
 
         panel.add(buttonPanel, BorderLayout.EAST);
         panel.add(new Label("Empfänger"), BorderLayout.WEST);
@@ -33,7 +41,344 @@ public class Frontend extends JFrame {
         Label textLabel = new Label("Paket entnommen.");
         textLabel.setForeground(pink);
         this.add(textLabel, BorderLayout.SOUTH);
-
         this.setVisible(true);
     }
+
+
+
+   public void createButtonPanel(String text){
+        Button button = new Button(text);
+        this.buttonPanel.add(button);
+        buttons.add(button);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
